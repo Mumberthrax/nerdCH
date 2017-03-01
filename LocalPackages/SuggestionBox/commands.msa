@@ -9,6 +9,15 @@
         msg(color(light_purple).'and submit the link here.')
         msg(color(light_purple).'Your suggestion is 100% anonymous, and you can')
         msg(color(light_purple).'audit this source code by running '.color(dark_purple).'/suggestion-box-code')
+            if (has_permission('nerdch.level.admin')) {
+                msg(color(RED).'Admin commands:')
+                msg(color(GOLD).'/suggestion-box-list')
+                msg(color(GOLD).'/suggestion-box-remove <userHash> <id> ')
+                msg(color(GOLD).'/suggestion-box-abuser <add/remove> <abuserHash>')
+                msg(color(green).'This suite of commands is not the most user friendly currently. Sorry.')
+                msg(color(green).'Please be careful with the -abuser command')
+            }
+        }
     } else {
         #Hash the username, so we can anonymously track users, to prevent abuse
         @hash = md5(player())
